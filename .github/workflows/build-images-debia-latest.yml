@@ -1,4 +1,4 @@
-name: UBUNTU
+name: DEBIAN LATEST
 on: [workflow_dispatch]
 # push:
 #     branches: [ main ]
@@ -11,7 +11,7 @@ jobs:
       runs-on: ubuntu-latest
       strategy:
         matrix:
-          buildfor: ['noble', 'mantic', 'jammy', 'focal']
+          buildfor: [latest]
       steps:
         - name: Checkout
           uses: actions/checkout@v4
@@ -31,8 +31,8 @@ jobs:
             context: .
             file: ./Dockerfile.multi.debian
             push: true
-            # tags: ${{ secrets.DOCKERHUB_USERNAME }}/ubuntu:12, ${{ secrets.DOCKERHUB_USERNAME }}/ubuntu:bookworm
-            tags: ${{ secrets.DOCKERHUB_USERNAME }}/ubuntu:${{ matrix.buildfor }}
+            # tags: ${{ secrets.DOCKERHUB_USERNAME }}/debian:12, ${{ secrets.DOCKERHUB_USERNAME }}/debian:bookworm
+            tags: ${{ secrets.DOCKERHUB_USERNAME }}/debian:${{ matrix.buildfor }}
             build-args: IMAGE=${{ matrix.buildfor }}
 
 
