@@ -1,10 +1,10 @@
 name: DEBIAN
-on: [workflow_dispatch]
-# push:
-#     branches: [ main ]
-#     paths-ignore:
-#       - '*.md'
-#       - '.github/workflows/**'
+on: # [workflow_dispatch]
+  push:
+     branches: [ main ]
+     paths-ignore:
+       - '*.md'
+       - '.github/workflows/**'
 
 jobs:
     build:
