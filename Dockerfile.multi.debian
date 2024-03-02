@@ -1,0 +1,8 @@
+ARG IMAGE
+FROM debian:$IMAGE
+COPY wsl.conf /etc/wsl.conf
+COPY init.sh init.sh
+COPY install-packages.sh install-packages.sh
+RUN ./install-packages.sh
+RUN ./init.sh
+CMD ["bash"] .

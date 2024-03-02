@@ -1,0 +1,16 @@
+
+
+
+docker build -f Dockerfile.multi --build-arg "IMAGE=bookworm" -t test .
+
+docker build -f Dockerfile.multi --build-arg "IMAGE=trixie" -t test .
+
+docker build -f Dockerfile.multi --build-arg "IMAGE=stable" -t test .
+
+docker build -f Dockerfile.multi --build-arg "IMAGE=bullseye" -t test .
+
+
+
+
+docker build -f Dockerfile.multi --build-arg "IMAGE=bookworm" -t runalsh/test:bookworm .
+docker push runalsh/test:bookworm
