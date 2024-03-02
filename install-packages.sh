@@ -6,6 +6,5 @@ apt-get install -qq -y --no-install-recommends \
     jq \
     curl \
     wget \
-    jq \
     sudo \
  && rm -rf /var/lib/apt/lists/*
