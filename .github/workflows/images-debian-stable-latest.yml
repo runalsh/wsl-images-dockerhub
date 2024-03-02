@@ -2,10 +2,12 @@ name: DEBIAN STABLE+LATEST
 on: # [workflow_dispatch]
   workflow_dispatch:
   push:
-     branches: [ main ]
-     paths-ignore:
-       - '*.md'
-       - '.github/workflows/**'
+    branches: [ main ]
+    paths-ignore:
+      - '*.md'
+      - '.github/workflows/**'
+  schedule:
+    - cron:  '0 0 1 * *'
 
 jobs:
     build:
