@@ -7,4 +7,5 @@ apt-get install -qq -y --no-install-recommends \
     curl \
     wget \
     sudo \
+    tar \
  && rm -rf /var/lib/apt/lists/*
