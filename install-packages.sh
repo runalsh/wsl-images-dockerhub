@@ -8,4 +8,5 @@ apt-get install -qq -y --no-install-recommends \
     wget \
     sudo \
     tar \
+    ca-certificates \
  && rm -rf /var/lib/apt/lists/*
