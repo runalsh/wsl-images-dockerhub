@@ -12,5 +12,7 @@ docker build -f Dockerfile.multi --build-arg "IMAGE=bullseye" -t test .
 
 
 
-docker build -f Dockerfile.multi --build-arg "IMAGE=bookworm" -t runalsh/test:bookworm .
-docker push runalsh/test:bookworm
+docker build -f Dockerfile.multi.debian --build-arg "IMAGE=bookworm" -t runalsh/testdebian:bookworm -t runalsh/testdebian:12 .
+docker push runalsh/testdebian --all-tags
+
+
