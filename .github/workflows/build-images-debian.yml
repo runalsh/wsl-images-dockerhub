@@ -9,6 +9,9 @@ on: [workflow_dispatch]
 jobs:
     build:
       runs-on: ubuntu-latest
+      strategy:
+        matrix:
+          buildfor: ['bookworm', 'stable']
       steps:
         - name: Checkout
           uses: actions/checkout@v4
@@ -28,8 +31,9 @@ jobs:
             context: .
             file: ./Dockerfile.multi.debian
             push: true
-            tags: ${{ secrets.DOCKERHUB_USERNAME }}/debian:12, ${{ secrets.DOCKERHUB_USERNAME }}/debian:bookworm
-            build-args: IMAGE=bookworm
+            # tags: ${{ secrets.DOCKERHUB_USERNAME }}/debian:12, ${{ secrets.DOCKERHUB_USERNAME }}/debian:bookworm
+            tags: ${{ secrets.DOCKERHUB_USERNAME }}/debian:${{ matrix.buildfor }}
+            build-args: IMAGE=${{ matrix.buildfor }}
 
 # docker build -f Dockerfile.multi --build-arg "IMAGE=bookworm" -t test .
 
@@ -38,11 +42,5 @@ jobs:
 # docker build -f Dockerfile.multi --build-arg "IMAGE=stable" -t test .
 
 # docker build -f Dockerfile.multi --build-arg "IMAGE=bullseye" -t test .
-
-
-
-
-# docker build -f Dockerfile.multi.debian --build-arg "IMAGE=bookworm" -t runalsh/testdebian:bookworm -t runalsh/testdebian:12 .
-# docker push runalsh/testdebian --all-tags
 
 
