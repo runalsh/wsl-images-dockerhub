@@ -1,4 +1,4 @@
-name: DEBIAN STABLE+LATEST
+name: DEBIAN STABLE+LATEST SLIM
 on: # [workflow_dispatch]
   workflow_dispatch:
   push:
@@ -14,7 +14,7 @@ jobs:
       runs-on: ubuntu-latest
       strategy:
         matrix:
-          buildfor: ['stable']
+          buildfor: ['stable-slim']
       steps:
         - name: Checkout
           uses: actions/checkout@v4
@@ -35,7 +35,7 @@ jobs:
             file: ./Dockerfile.multi.debian
             push: true
             # tags: ${{ secrets.DOCKERHUB_USERNAME }}/debian:12, ${{ secrets.DOCKERHUB_USERNAME }}/debian:bookworm
-            tags: ${{ secrets.DOCKERHUB_USERNAME }}/debian:${{ matrix.buildfor }}, ${{ secrets.DOCKERHUB_USERNAME }}/debian:latest
+            tags: ${{ secrets.DOCKERHUB_USERNAME }}/debian:${{ matrix.buildfor }}, ${{ secrets.DOCKERHUB_USERNAME }}/debian:latest-slim
             build-args: IMAGE=${{ matrix.buildfor }}
 
 
