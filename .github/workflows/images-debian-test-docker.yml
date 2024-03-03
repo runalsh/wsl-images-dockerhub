@@ -2,7 +2,7 @@ name: DEBIAN TEST DOCKJER
 on: # [workflow_dispatch]
   workflow_dispatch:
   push:
-    branches: [ test ]
+    branches: [ docker ]
     paths-ignore:
       - '*.md'
       - '.github/workflows/**'
