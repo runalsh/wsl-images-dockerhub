@@ -1,4 +1,4 @@
-name: DEBIAN
+name: DEBIAN TEST
 on: # [workflow_dispatch]
   workflow_dispatch:
   push:
