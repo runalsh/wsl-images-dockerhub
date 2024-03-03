@@ -1,0 +1,13 @@
+# syntax = edrevo/dockerfile-plus
+
+ARG IMAGE
+FROM debian:$IMAGE
+
+INCLUDE+ Dockerfile.base
+
+RUN curl -fsSL https://get.docker.com -o get-docker.sh
+RUN chmod +x get-docker.sh
+RUN sh ./get-docker.sh
+RUN rm -rf /var/lib/apt/lists/*
+
+CMD ["bash"] .
