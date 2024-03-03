@@ -2,12 +2,10 @@ name: DEBIAN TEST
 on: # [workflow_dispatch]
   workflow_dispatch:
   push:
-    branches: [ main ]
+    branches: [ test ]
     paths-ignore:
       - '*.md'
       - '.github/workflows/**'
-  schedule:
-    - cron:  '0 0 1 * *'
 
 jobs:
     build:
