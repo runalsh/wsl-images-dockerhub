@@ -6,5 +6,5 @@ COPY wsl.conf /etc/wsl.conf
 # COPY install-packages.sh install-packages.sh
 # RUN chmod +x install-packages.sh
 # RUN ./install-packages.sh
-RUN ./init.sh
+# RUN ./init.sh
 CMD ["bash"] .
