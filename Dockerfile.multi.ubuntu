@@ -3,6 +3,6 @@
 ARG IMAGE
 FROM ubuntu:$IMAGE
 
-INCLUDE+ Dockerfile.common
+INCLUDE+ Dockerfile.base
 
 CMD ["bash"] .
