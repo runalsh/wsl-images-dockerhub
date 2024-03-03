@@ -1,0 +1,9 @@
+# syntax = edrevo/dockerfile-plus
+
+COPY wsl.conf /etc/wsl.conf
+COPY init.sh init.sh
+RUN chmod +x init.sh
+COPY install-packages.sh install-packages.sh
+RUN chmod +x install-packages.sh
+RUN ./install-packages.sh
+RUN ./init.sh
