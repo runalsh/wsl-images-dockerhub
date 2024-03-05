@@ -11,4 +11,5 @@ apt-get install -qq -y --no-install-recommends \
     ca-certificates \
     systemd \
     systemd-sysv \
+    apt-utils \
  && rm -rf /var/lib/apt/lists/*
