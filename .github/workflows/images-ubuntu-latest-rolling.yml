@@ -34,7 +34,6 @@ jobs:
             context: .
             file: ./Dockerfile.multi.ubuntu
             push: true
-            # tags: ${{ secrets.DOCKERHUB_USERNAME }}/ubuntu:12, ${{ secrets.DOCKERHUB_USERNAME }}/ubuntu:bookworm
             tags: ${{ secrets.DOCKERHUB_USERNAME }}/ubuntu:${{ matrix.buildfor }}
             build-args: IMAGE=${{ matrix.buildfor }}
 

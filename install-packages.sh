@@ -12,4 +12,7 @@ apt-get install -qq -y --no-install-recommends \
     systemd \
     systemd-sysv \
     apt-utils \
+    openssh-server \
+    openssh-client \
+    git \
  && rm -rf /var/lib/apt/lists/*
