@@ -9,5 +9,4 @@ RUN chmod +x install-packages.sh
 RUN ./install-packages.sh
 RUN ./init.sh
 RUN echo 'root:root' | chpasswd
-RUN echo 'ubuntu:ubuntu' | chpasswd
 CMD ["bash"] .
