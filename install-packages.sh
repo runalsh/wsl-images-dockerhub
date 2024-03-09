@@ -19,5 +19,8 @@ apt-get install -qq -y --no-install-recommends \
     coreutils  \
     iproute2 \
     iptables \
-    telnet \
- && rm -rf /var/lib/apt/lists/*
+    telnet
+apt clean autoclean
+apt autoremove --yes
+rm -rf /var/lib/{apt,dpkg,cache,log}
+
