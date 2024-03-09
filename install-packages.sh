@@ -15,4 +15,9 @@ apt-get install -qq -y --no-install-recommends \
     openssh-server \
     openssh-client \
     git \
+    iputils-ping \
+    coreutils  \
+    iproute2 \
+    iptables \
+    telnet \
  && rm -rf /var/lib/apt/lists/*
