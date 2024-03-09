@@ -14,11 +14,8 @@ apt-get install -qq -y --no-install-recommends \
     apt-utils \
     openssh-server \
     openssh-client \
-    git \
     iputils-ping \
     coreutils  \
-    iproute2 \
-    iptables \
     telnet
 apt clean autoclean
 apt autoremove --yes
