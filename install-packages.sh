@@ -16,6 +16,7 @@ apt-get install -qq -y --no-install-recommends \
     openssh-client \
     iputils-ping \
     coreutils  \
+    socat \
     telnet
 apt clean autoclean
 apt autoremove --yes
