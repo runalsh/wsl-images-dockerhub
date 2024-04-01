@@ -15,7 +15,7 @@ jobs:
       runs-on: ubuntu-latest
       strategy:
         matrix:
-          buildfor: ['10', '11', '12', '12-slim']
+          buildfor: ['11', '12', '12-slim']
       steps:
         - name: Checkout
           uses: actions/checkout@v4
