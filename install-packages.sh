@@ -1,5 +1,5 @@
 apt-get update 
-apt-get install -qq -y --no-install-recommends \
+apt-get install -y --no-install-recommends --no-install-suggests \
     nmon \
     nano \
     net-tools \
@@ -19,7 +19,8 @@ apt-get install -qq -y --no-install-recommends \
     coreutils  \
     telnet \
     gpg \
-    locales
+    locales \
+    grep
 echo Europe/Moscow > /etc/timezone
 sed -i 's/^# *\(en_US.UTF-8\)/\1/' /etc/locale.gen
 echo "export LC_ALL=en_US.UTF-8" >> ~/.bashrc

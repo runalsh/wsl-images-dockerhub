@@ -7,7 +7,5 @@ sed -i "s|^#AllowAgentForwarding .*|AllowAgentForwarding yes|g" /etc/ssh/sshd_co
 sed -i "s|^#AllowTcpForwarding .*|AllowTcpForwarding yes|g" /etc/ssh/sshd_config
 sed -i "s|^#GatewayPorts .*|GatewayPorts yes|g" /etc/ssh/sshd_config
 cat /etc/os-release
-if  [ "$ID" ==" ubuntu" ]; then
-  echo 'ubuntu:ubuntu' | chpasswd
-fi
+echo 'ubuntu:ubuntu' | chpasswd
 echo 'root:root' | chpasswd
