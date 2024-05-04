@@ -36,7 +36,9 @@ jobs:
             file: ./Dockerfile.multi
             push: true
             tags: ${{ secrets.DOCKERHUB_USERNAME }}/debian:${{ matrix.buildfor }}
-            build-args: DISTRIB=debian,IMAGE=${{ matrix.buildfor }}
+            build-args:  | 
+              DISTRIB=debian
+              IMAGE=${{ matrix.buildfor }}
 
 
 

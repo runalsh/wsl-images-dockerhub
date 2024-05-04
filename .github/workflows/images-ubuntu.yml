@@ -35,7 +35,9 @@ jobs:
             file: ./Dockerfile.multi
             push: true
             tags: ${{ secrets.DOCKERHUB_USERNAME }}/ubuntu:${{ matrix.buildfor }}
-            build-args: DISTRIB=ubuntu,IMAGE=${{ matrix.buildfor }}
+            build-args: |
+              DISTRIB=ubuntu 
+              IMAGE=${{ matrix.buildfor }}
 
 
 
