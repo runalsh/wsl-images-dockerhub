@@ -18,7 +18,8 @@ apt-get install -qq -y --no-install-recommends \
     iputils-ping \
     coreutils  \
     telnet
-apt {clean,autoclean}
+apt clean
+apt autoclean
 apt autoremove --yes
-rm -rf /var/lib/{apt,dpkg,cache,log}
+rm -rf /var/lib/{apt,dpkg,cache,log}/*
 
