@@ -32,10 +32,10 @@ jobs:
           uses: docker/build-push-action@v5
           with:
             context: .
-            file: ./Dockerfile.multi.debian
+            file: ./Dockerfile.multi
             push: true
             tags: ${{ secrets.DOCKERHUB_USERNAME }}/debian:${{ matrix.buildfor }}
-            build-args: IMAGE=${{ matrix.buildfor }}
+            build-args: DISTRIB=debian,IMAGE=${{ matrix.buildfor }}
 
 
 
