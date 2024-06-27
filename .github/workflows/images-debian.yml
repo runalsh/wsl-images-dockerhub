@@ -1,4 +1,4 @@
-name: DEBIAN
+name: DEBIAN NUMBERS
 on: # [workflow_dispatch]
   workflow_dispatch:
   push:
@@ -9,12 +9,13 @@ on: # [workflow_dispatch]
   schedule:
     - cron:  '0 0 1 * *'
 
+
 jobs:
     build:
       runs-on: ubuntu-latest
       strategy:
         matrix:
-          buildfor: ['bookworm', 'trixie', 'bullseye']
+          buildfor: ['11', '12', 'latest', 'stable-slim']
       steps:
         - name: Checkout
           uses: actions/checkout@v4
@@ -35,7 +36,7 @@ jobs:
             file: ./Dockerfile.multi
             push: true
             tags: ${{ secrets.DOCKERHUB_USERNAME }}/debian:${{ matrix.buildfor }}
-            build-args: | 
+            build-args:  | 
               DISTRIB=debian
               IMAGE=${{ matrix.buildfor }}
 
