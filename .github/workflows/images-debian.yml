@@ -1,4 +1,4 @@
-name: DEBIAN NUMBERS
+name: DEBIAN
 on: # [workflow_dispatch]
   workflow_dispatch:
   push:
