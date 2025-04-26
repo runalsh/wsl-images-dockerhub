@@ -22,6 +22,7 @@ apt-get install -y --no-install-recommends --no-install-suggests \
     telnet \
     gpg \
     grep \
+    iproute2 \
     locales 
 echo Europe/Moscow > /etc/timezone
 sed -i 's/^# *\(en_US.UTF-8\)/\1/' /etc/locale.gen
